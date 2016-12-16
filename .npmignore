@@ -1,0 +1,4 @@
+.eslintrc.json
+/lib/**/*.test.js
+/scripts/
+.npmignore

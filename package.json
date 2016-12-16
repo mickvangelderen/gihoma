@@ -1,0 +1,28 @@
+{
+  "name": "gihoma",
+  "version": "0.1.0",
+  "description": "A simple and effective git hook manager.",
+  "keywords": [ "git", "hook", "manager", "install", "uninstall", "symbolic link" ],
+  "license": "ISC",
+  "author": {
+    "name": "Mick van Gelderen",
+    "email": "mickvangelderen@gmail.com",
+    "url": "https://github.com/mickvangelderen"
+  },
+  "bin": "bin/index.js",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "node bin/index.js",
+    "install-hooks": "node bin/index.js install",
+    "uninstall-hooks": "node bin/index.js uninstall",
+    "test": "mocha lib/**/*.test.js"
+  },
+  "devDependencies": {
+    "eslint": "^3.12.2",
+    "mocha": "^3.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mickvangelderen/gihoma.git"
+  }
+}
