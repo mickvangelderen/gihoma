@@ -2,6 +2,9 @@
   "name": "gihoma",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "^6.0.0"
+  },
   "description": "A simple and effective git hook manager.",
   "keywords": [ "git", "hook", "manager", "install", "uninstall", "symbolic link" ],
   "license": "ISC",
