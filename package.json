@@ -17,8 +17,7 @@
   "main": "lib/index.js",
   "scripts": {
     "start": "node bin/index.js",
-    "install-hooks": "node bin/index.js install",
-    "uninstall-hooks": "node bin/index.js uninstall",
+    "setup": "gihoma/post-checkout.sh && node bin/index.js install --verbose",
     "test": "mocha lib/**/*.test.js"
   },
   "devDependencies": {
