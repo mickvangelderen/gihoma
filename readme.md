@@ -1,5 +1,7 @@
 # gihoma
 
+[![Build Status](https://travis-ci.org/mickvangelderen/gihoma.svg?branch=master)](https://travis-ci.org/mickvangelderen/gihoma)
+
 A simple and effective git hook manager.
 
 ## Motivation

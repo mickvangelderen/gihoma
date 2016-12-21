@@ -6,7 +6,14 @@
     "node": "^6.0.0"
   },
   "description": "A simple and effective git hook manager.",
-  "keywords": [ "git", "hook", "manager", "install", "uninstall", "symbolic link" ],
+  "keywords": [
+    "git",
+    "hook",
+    "manager",
+    "install",
+    "uninstall",
+    "symbolic link"
+  ],
   "license": "ISC",
   "author": {
     "name": "Mick van Gelderen",
@@ -21,6 +28,7 @@
     "test": "mocha lib/**/*.test.js"
   },
   "devDependencies": {
+    "checko": "^1.0.1",
     "eslint": "^3.12.2",
     "mocha": "^3.2.0"
   },

@@ -1,16 +1,16 @@
 #!/usr/bin/env node
 
-var gihoma = require('../lib')
+const install = require('../lib/install')
+const uninstall = require('../lib/uninstall')
 const package_version = require('../package.json').version
 
 const command = process.argv[2]
-
 const flags = process.argv.slice(3)
 
 switch (command) {
   case 'install':
     process_results(
-      gihoma.install({
+      install({
         force: flags.some(flag => flag === '--force')
       }),
       {
@@ -20,7 +20,7 @@ switch (command) {
     break;
   case 'uninstall':
     process_results(
-      gihoma.uninstall(),
+      uninstall(),
       {
         verbose: flags.some(flag => flag === '--verbose')
       }
@@ -30,7 +30,7 @@ switch (command) {
     console.log(package_version)
     break;
   default:
-    console.error('Unknown command. Use "install".')
+    console.error('Available commands:\n  install\n  uninstall\n  version')
 }
 
 function process_results(results, { verbose = false }) {
