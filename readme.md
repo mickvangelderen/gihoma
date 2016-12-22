@@ -1,7 +1,7 @@
 # gihoma
 
 [![Build Status](https://travis-ci.org/mickvangelderen/gihoma.svg?branch=master)](https://travis-ci.org/mickvangelderen/gihoma)
-[![Coverage Status](https://coveralls.io/repos/github/mickvangelderen/gihoma/badge.svg?branch=master)](https://coveralls.io/github/mickvangelderen/gihoma?branch=master)
+[![Coverage Status](https://img.shields.io/coveralls/mickvangelderen/gihoma/master.svg)](https://coveralls.io/github/mickvangelderen/gihoma?branch=master)
 
 A simple and effective git hook manager.
 
