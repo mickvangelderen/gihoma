@@ -23,8 +23,8 @@
   "bin": "bin/index.js",
   "main": "lib/index.js",
   "scripts": {
-    "setup": "gihoma/post-checkout.sh && node bin/index.js install --verbose",
-    "build": "babel \"{bin,lib,test}/**/*.js\" --out-dir build/ && cp --parents --verbose package.json test/mocha.opts build/",
+    "setup": "gihoma/post-checkout.sh && git config push.followTags true && node bin/index.js install --verbose",
+    "build": "babel \"{bin,lib}/**/*.js\" --out-dir build/ --ignore \"*.test.js\" && cp --parents --verbose package.json build/",
     "test": "mocha",
     "coverage": "rm -rf coverage/ && istanbul cover ./node_modules/mocha/bin/_mocha",
     "travis": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly && cat coverage/lcov.info | coveralls && rm -rf coverage/"
