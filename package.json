@@ -24,7 +24,7 @@
   "main": "lib/index.js",
   "scripts": {
     "setup": "gihoma/post-checkout.sh && git config push.followTags true && node bin/index.js install --verbose",
-    "build": "babel \"{bin,lib}/**/*.js\" --out-dir build/ --ignore \"*.test.js\" && cp --parents --verbose package.json build/",
+    "build": "babel \"{bin,lib}/**/*.js\" --out-dir build/ --ignore \"*.test.js\" && node scripts/build-package-json.js",
     "test": "mocha",
     "coverage": "rm -rf coverage/ && istanbul cover ./node_modules/mocha/bin/_mocha",
     "travis": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly && cat coverage/lcov.info | coveralls && rm -rf coverage/"
@@ -35,6 +35,7 @@
     "checko": "^1.0.1",
     "coveralls": "^2.11.15",
     "eslint": "^3.12.2",
+    "function": "^0.6.1",
     "istanbul": "^0.4.5",
     "mocha": "^3.2.0"
   },
