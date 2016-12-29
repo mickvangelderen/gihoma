@@ -21,9 +21,7 @@ npm install --save-dev gihoma
 
 Create a `gihoma` directory in your project root. This is where you'll place all your hooks.
 
-```
-mkdir gihoma
-```
+    mkdir gihoma
 
 Add hooks, the file extension will be dropped. For example `gihoma/pre-commit.js`:
 
@@ -55,9 +53,12 @@ I recommend providing your developers with a `setup` npm script. For example `pa
 }
 ```
 
+## Documentation
+
+The file structure documents the API. Files and variables starting with an `_` are not part of the public API. Arguments are documented in the code. Examples are given in the tests. Even though this method of documentation is not easily searchable, the chance of incorrect information is minimized.
+
 ## Future work
 
- * Transpile to es2015
  * Error on multiple files resolving to the same git hook name (`pre-commit.a` and `pre-commit.b`).
  * Warn on unknown git hook names.
  * Improve command line tool, make hooks path configurable.
