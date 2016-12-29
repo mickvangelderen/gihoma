@@ -3,27 +3,35 @@ const partial = require('function/partial')
 const readFileSync = require('fs').readFileSync
 const writeFileSync = require('fs').writeFileSync
 
-const DELETE = { symbol: 'DELETE' }
-
 pipe('package.json', [
   readFileSync,
   JSON.parse,
   partial(transform_object, [ _, {
-    private: () => DELETE,
-    engines: partial(transform_object, [ _, {
-      node: () => '^4.0.0'
-    }])
+    private: DELETE,
+    engines: {
+      node: '^4.0.0'
+    }
   }]),
   partial(JSON.stringify, [ _, null, 2 ]),
   partial(writeFileSync, [ 'build/package.json' ])
 ])
 
+function DELETE() {}
+
 function transform_object(input, transformations) {
   return Object.keys(input)
   .reduce((output, key) => {
     if (transformations.hasOwnProperty(key)) {
-      const value = transformations[key](input[key])
-      if (value !== DELETE) output[key] = value
+      const transformation = transformations[key]
+      if (transformation === DELETE) {
+        // Do nothing.
+      } else if (typeof transformation === 'function') {
+        output[key] = transformation(input[key])
+      } else if (typeof transformation === 'object' && transformation !== null) {
+        output[key] = transform_object(input[key], transformation)
+      } else {
+        output[key] = transformation
+      }
     } else {
       output[key] = input[key]
     }
