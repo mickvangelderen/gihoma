@@ -21,7 +21,9 @@ npm install --save-dev gihoma
 
 Create a `gihoma` directory in your project root. This is where you'll place all your hooks.
 
-    mkdir gihoma
+```bash
+mkdir gihoma
+```
 
 Add hooks, the file extension will be dropped. For example `gihoma/pre-commit.js`:
 
@@ -34,7 +36,7 @@ console.log('Hello World!')
 Ensure the file is executable:
 
 ```bash
-chmod +x `gihoma/pre-commit.js`
+chmod +x gihoma/pre-commit.js
 ```
 
 Have gihoma create symbolic links to all executable files in the gihoma directory:
