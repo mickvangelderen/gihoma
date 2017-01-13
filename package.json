@@ -37,7 +37,8 @@
     "eslint": "^3.12.2",
     "function": "^0.6.1",
     "istanbul": "^0.4.5",
-    "mocha": "^3.2.0"
+    "mocha": "^3.2.0",
+    "rimraf": "^2.5.4"
   },
   "repository": {
     "type": "git",
